@@ -36,9 +36,9 @@
         </div>
     </div>
     <script>
-        async function checkAppStatus() {
+       async function checkAppStatus() {
             try {
-                const response = await fetch("https://65832ec038826a435d269a24--mamanapi.netlify.app/.netlify/functions/api/", {
+                const response = await fetch("https://65832ec038826a435d269a24--mamanapi.netlify.app/.netlify/functions/api/openai", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -49,7 +49,7 @@
                     throw new Error("Server request failed");
                 }
 
-                const result = await response.json();
+                const result = await response.text(); // Change this line to handle text response
                 console.log(result); // Log the result to the console or handle it as needed
             } catch (error) {
                 console.error(error);
