@@ -1,0 +1,13 @@
+[build]
+    functions = "functions"
+
+[[redirects]]
+  from = "/openai"
+  to = "https://lucky-fairy-7e2ec9.netlify.app/pages/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
